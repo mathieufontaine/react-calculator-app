@@ -1,5 +1,6 @@
 .result {
   text-align: right;
+  height: 100px;
 }
 
 .buttons-grid {
@@ -10,7 +11,7 @@
     "7 8 9 del"
     "4 5 6 add"
     "3 2 1 sub"
-    "dot 0 slash multiply"
+    "dot 0 divide multiply"
     "reset reset equal equal";
 }
 
@@ -50,8 +51,8 @@
 #sub {
   grid-area: sub;
 }
-#slash {
-  grid-area: slash;
+#divide {
+  grid-area: divide;
 }
 #multiply {
   grid-area: multiply;
