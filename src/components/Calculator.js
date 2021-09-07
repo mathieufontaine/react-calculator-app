@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { reset } from "axe-core";
 
 const Calculator = () => {
   const [total, setTotal] = useState(0);
@@ -10,37 +9,49 @@ const Calculator = () => {
   const [calculationType, setCalculationType] = useState("");
 
   const writeNumber = newNum => {
-    setShowTotal(false);
-    currentNum == 0
-      ? setCurrentNum(newNum)
-      : setCurrentNum(parseFloat(currentNum + `${newNum}`));
+    if (showTotal == false) {
+      currentNum == 0
+        ? setCurrentNum(newNum)
+        : setCurrentNum(parseFloat(currentNum + `${newNum}`));
+    }
+  };
+
+  const deleteNumber = () => {
+    if (currentNum !== 0) {
+      setCurrentNum(
+        currentNum.toString().substr(0, currentNum.toString().length - 1)
+      );
+    }
   };
 
   const addToMemory = symbol => {
-    setSavedNum(currentNum);
-    symbol !== calculationType && setCalculationType(symbol);
     setCurrentNum(0);
+    savedNum == 0 && setSavedNum(currentNum);
+    symbol !== calculationType && setCalculationType(symbol);
+    setShowTotal(false);
   };
 
   const calculate = () => {
     if (calculationType !== "" && currentNum !== "") {
-      const lastNum = total !== 0 ? total : savedNum;
+      let newNum;
       switch (calculationType) {
         case "add":
-          setTotal(lastNum + currentNum);
+          newNum = savedNum + currentNum;
           break;
         case "sub":
-          setTotal(lastNum - currentNum);
+          newNum = savedNum - currentNum;
           break;
         case "multiply":
-          setTotal(lastNum * currentNum);
+          newNum = savedNum * currentNum;
           break;
         case "divide":
-          lastNum !== 0 && setTotal(lastNum / currentNum);
+          newNum = savedNum !== 0 && savedNum / currentNum;
           break;
         default:
           break;
       }
+      setTotal(newNum);
+      setSavedNum(newNum);
       setShowTotal(true);
     }
   };
@@ -119,10 +130,20 @@ const Calculator = () => {
         >
           /
         </button>
-        <button className="btn-primary" id="dot">
+        <button
+          className="btn-primary"
+          id="dot"
+          onClick={() =>
+            showTotal == false && setCurrentNum(currentNum.toString() + ".")
+          }
+        >
           .
         </button>
-        <button className="btn-secondary" id="del">
+        <button
+          className="btn-secondary"
+          id="del"
+          onClick={() => deleteNumber()}
+        >
           DEL
         </button>
         <button className="btn-secondary" id="reset" onClick={() => reset()}>
