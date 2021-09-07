@@ -22,6 +22,39 @@ $second-key-shadow: hsl(224, 28%, 35%);
 $third-key-background: hsl(6, 63%, 50%);
 $third-key-shadow: hsl(6, 70%, 34%);
 
+// theme 2
+$main-background2: hsl(0, 0%, 90%);
+$toggle-background2: hsl(0, 0%, 90%);
+$screen-background2: hsl(0, 0%, 90%);
+
+$text-color2: hsl(60, 10%, 19%);
+
+$main-key-background2: hsl(185, 42%, 37%);
+$main-key-shadow2: hsl(185, 58%, 25%);
+
+$second-key-background2: hsl(25, 98%, 40%);
+$second-key-shadow2: hsl(25, 99%, 27%);
+
+$third-key-background2: hsl(45, 7%, 89%);
+$third-key-shadow2: hsl(35, 11%, 61%);
+
+// theme 3
+$main-background3: hsl(268, 75%, 9%);
+$toggle-background3: hsl(268, 71%, 12%);
+$screen-background3: hsl(268, 71%, 12%);
+
+$text-color3: hsl(52, 100%, 62%);
+$text-color-blue3: hsl(198, 20%, 13%);
+
+$main-key-background3: hsl(281, 89%, 26%);
+$main-key-shadow3: hsl(285, 91%, 52%);
+
+$second-key-background3: hsl(176, 100%, 44%);
+$second-key-shadow3: hsl(177, 92%, 70%);
+
+$third-key-background3: hsl(268, 47%, 21%);
+$third-key-shadow3: hsl(290, 70%, 36%);
+
 *,
 *:before,
 *:after {
@@ -37,11 +70,7 @@ html {
 body {
   font-family: "Spartan", sans-serif;
   font-weight: 700;
-  background: $main-background;
-  color: $white;
   line-height: 1.6;
-  height: 100%;
-  min-height: 100vh;
   font-size: 3.2rem;
 }
 
@@ -64,16 +93,38 @@ img {
 }
 
 .app {
-  position: relative;
-  // width: 50%;
+  color: $white;
+  height: 100%;
+  min-height: 100vh;
+  &.theme1 {
+    background: $main-background;
+    section {
+      background: $screen-background;
+    }
+  }
+  &.theme2 {
+    background: $main-background2;
+    section {
+      background: $screen-background2;
+    }
+  }
+  &.theme3 {
+    background: $main-background3;
+    section {
+      background: $screen-background3;
+    }
+  }
+}
+
+.container {
   max-width: 600px;
-  margin: 5% auto;
+  margin: auto;
+  padding: 5%;
 }
 
 section {
   position: relative;
   padding: 2.5rem;
-  background: $screen-background;
   margin: 3rem 0;
   border-radius: 1rem;
 }

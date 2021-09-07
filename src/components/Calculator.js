@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Calculator = () => {
+const Calculator = ({ theme }) => {
   const [total, setTotal] = useState(0);
   const [currentNum, setCurrentNum] = useState(0);
   const [savedNum, setSavedNum] = useState(0);
@@ -65,7 +65,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="calculator">
+    <div className={`calculator theme${theme}`}>
       <section className="result">
         <div id="total">
           {showTotal ? total : currentNum !== 0 ? currentNum : savedNum}

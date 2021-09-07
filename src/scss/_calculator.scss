@@ -74,15 +74,13 @@
   display: inline-block;
   border: 0;
   border-radius: 4px;
-  padding: 1rem 3rem;
+  padding: 1rem 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 2.5rem;
   outline: none;
   cursor: pointer;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   &:hover {
     transform: scale(1.1);
   }
@@ -90,18 +88,48 @@
 
 .btn-primary {
   @extend %btn;
-  background: $main-key-background;
-  color: $text-color;
 }
-
-.btn-secondary {
-  @extend %btn;
-  background: $second-key-background;
-  color: $white;
-}
-
+.btn-secondary,
 .btn-third {
   @extend %btn;
-  background: $third-key-background;
   color: $white;
+}
+
+.calculator.theme1 {
+  .btn-primary {
+    background: $main-key-background;
+    color: $text-color;
+  }
+  .btn-secondary {
+    background: $second-key-background;
+  }
+  .btn-third {
+    background: $third-key-background;
+  }
+}
+
+.calculator.theme2 {
+  .btn-primary {
+    background: $main-key-background2;
+    color: $text-color2;
+  }
+  .btn-secondary {
+    background: $second-key-background2;
+  }
+  .btn-third {
+    background: $third-key-background2;
+  }
+}
+
+.calculator.theme3 {
+  .btn-primary {
+    background: $main-key-background3;
+    color: $text-color3;
+  }
+  .btn-secondary {
+    background: $second-key-background3;
+  }
+  .btn-third {
+    background: $third-key-background3;
+  }
 }
