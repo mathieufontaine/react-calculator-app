@@ -1,0 +1,106 @@
+.result {
+  text-align: right;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  grid-template-areas:
+    "7 8 9 del"
+    "4 5 6 add"
+    "3 2 1 sub"
+    "dot 0 slash multiply"
+    "reset reset equal equal";
+}
+
+#1 {
+  grid-area: 1;
+}
+#2 {
+  grid-area: 2;
+}
+#3 {
+  grid-area: 3;
+}
+#4 {
+  grid-area: 4;
+}
+#5 {
+  grid-area: 5;
+}
+#6 {
+  grid-area: 6;
+}
+#7 {
+  grid-area: 7;
+}
+#8 {
+  grid-area: 8;
+}
+#9 {
+  grid-area: 9;
+}
+#0 {
+  grid-area: 0;
+}
+#add {
+  grid-area: add;
+}
+#sub {
+  grid-area: sub;
+}
+#slash {
+  grid-area: slash;
+}
+#multiply {
+  grid-area: multiply;
+}
+#dot {
+  grid-area: dot;
+}
+#del {
+  grid-area: del;
+}
+#reset {
+  grid-area: reset;
+}
+#equal {
+  grid-area: equal;
+}
+
+%btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5rem;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  background: $main-key-background;
+  color: $text-color;
+}
+
+.btn-secondary {
+  @extend %btn;
+  background: $second-key-background;
+  color: $white;
+}
+
+.btn-third {
+  @extend %btn;
+  background: $third-key-background;
+  color: $white;
+}
