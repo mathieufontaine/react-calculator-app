@@ -41,6 +41,7 @@
   /* For selected radio only */
   background-color: $third-key-background;
   color: #fff;
+  transition: 1s ease-out;
 }
 
 .app.theme2 .switch__label--selected {

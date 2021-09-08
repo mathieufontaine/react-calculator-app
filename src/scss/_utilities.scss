@@ -89,6 +89,8 @@ img {
   color: $white;
   height: 100%;
   min-height: 100vh;
+  transition: 0.5s ease-in-out;
+
   &.theme1 {
     background: $main-background;
     section {
@@ -122,6 +124,7 @@ section {
   padding: 2.5rem;
   margin: 3rem 0;
   border-radius: 1rem;
+  transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 700px) {

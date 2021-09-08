@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Header = ({ setTheme }) => {
+const Header = ({ setTheme, theme }) => {
   const onChangeValue = e => {
     e.target.parentNode.parentNode.childNodes.forEach(
       node => (node.className = "switch__label")
     );
-    e.target.parentNode.className = "switch__label switch__label--selected";
+    e.target.parentNode.classList.add = "switch__label--selected";
     setTheme(e.target.value);
+    const json = JSON.stringify(e.target.value);
+    localStorage.setItem("theme", json);
   };
 
   return (
@@ -23,7 +25,8 @@ const Header = ({ setTheme }) => {
           <div className="switch" onChange={e => onChangeValue(e)}>
             <label
               for="theme1"
-              className={"switch__label switch__label--selected"}
+              className={`switch__label ${theme == 1 &&
+                "switch__label--selected"}`}
             >
               <input
                 id="theme1"
@@ -33,7 +36,11 @@ const Header = ({ setTheme }) => {
                 className="switch__input"
               />
             </label>
-            <label for="theme2" className="switch__label">
+            <label
+              for="theme2"
+              className={`switch__label ${theme == 2 &&
+                "switch__label--selected"}`}
+            >
               <input
                 id="theme2"
                 type="radio"
@@ -42,7 +49,11 @@ const Header = ({ setTheme }) => {
                 className="switch__input"
               />
             </label>
-            <label for="theme3" className="switch__label">
+            <label
+              for="theme3"
+              className={`switch__label ${theme == 3 &&
+                "switch__label--selected"}`}
+            >
               <input
                 id="theme3"
                 type="radio"

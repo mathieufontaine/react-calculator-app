@@ -9,7 +9,7 @@ const Calculator = () => {
   const [calculationType, setCalculationType] = useState("");
 
   const writeNumber = newNum => {
-    if (showTotal == false) {
+    if (showTotal === false) {
       currentNum == null
         ? setCurrentNum(newNum)
         : setCurrentNum(parseFloat(currentNum + `${newNum}`));
@@ -26,7 +26,7 @@ const Calculator = () => {
 
   const addToMemory = symbol => {
     setCurrentNum(null);
-    savedNum == 0 && setSavedNum(currentNum);
+    savedNum === 0 && setSavedNum(currentNum);
     symbol !== calculationType && setCalculationType(symbol);
     setShowTotal(false);
   };
@@ -135,7 +135,7 @@ const Calculator = () => {
           className="btn-primary"
           id="dot"
           onClick={() =>
-            showTotal == false &&
+            showTotal === false &&
             setCurrentNum(
               currentNum !== null ? currentNum.toString() + "." : "0."
             )
