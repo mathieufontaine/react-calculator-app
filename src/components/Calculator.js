@@ -1,16 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
-const Calculator = ({ theme }) => {
+const Calculator = () => {
   const [total, setTotal] = useState(0);
-  const [currentNum, setCurrentNum] = useState(0);
+  const [currentNum, setCurrentNum] = useState(null);
   const [savedNum, setSavedNum] = useState(0);
   const [showTotal, setShowTotal] = useState(false);
   const [calculationType, setCalculationType] = useState("");
 
   const writeNumber = newNum => {
     if (showTotal == false) {
-      currentNum == 0
+      currentNum == null
         ? setCurrentNum(newNum)
         : setCurrentNum(parseFloat(currentNum + `${newNum}`));
     }
@@ -25,7 +25,7 @@ const Calculator = ({ theme }) => {
   };
 
   const addToMemory = symbol => {
-    setCurrentNum(0);
+    setCurrentNum(null);
     savedNum == 0 && setSavedNum(currentNum);
     symbol !== calculationType && setCalculationType(symbol);
     setShowTotal(false);
@@ -45,7 +45,7 @@ const Calculator = ({ theme }) => {
           newNum = savedNum * currentNum;
           break;
         case "divide":
-          newNum = savedNum !== 0 && savedNum / currentNum;
+          newNum = currentNum !== 0 ? savedNum / currentNum : "Not a number";
           break;
         default:
           break;
@@ -65,24 +65,21 @@ const Calculator = ({ theme }) => {
   };
 
   return (
-    <div className={`calculator theme${theme}`}>
+    <div className="calculator">
       <section className="result">
         <div id="total">
-          {showTotal ? total : currentNum !== 0 ? currentNum : savedNum}
+          {showTotal ? total : currentNum !== null ? currentNum : savedNum}
         </div>
       </section>
       <section className="buttons-grid">
-        <button className="btn-primary" id="0" onClick={() => writeNumber(0)}>
-          0
+        <button className="btn-primary" id="7" onClick={() => writeNumber(7)}>
+          7
         </button>
-        <button className="btn-primary" id="1" onClick={() => writeNumber(1)}>
-          1
+        <button className="btn-primary" id="8" onClick={() => writeNumber(8)}>
+          8
         </button>
-        <button className="btn-primary" id="2" onClick={() => writeNumber(2)}>
-          2
-        </button>
-        <button className="btn-primary" id="3" onClick={() => writeNumber(3)}>
-          3
+        <button className="btn-primary" id="9" onClick={() => writeNumber(9)}>
+          9
         </button>
         <button className="btn-primary" id="4" onClick={() => writeNumber(4)}>
           4
@@ -93,15 +90,19 @@ const Calculator = ({ theme }) => {
         <button className="btn-primary" id="6" onClick={() => writeNumber(6)}>
           6
         </button>
-        <button className="btn-primary" id="7" onClick={() => writeNumber(7)}>
-          7
+        <button className="btn-primary" id="1" onClick={() => writeNumber(1)}>
+          1
         </button>
-        <button className="btn-primary" id="8" onClick={() => writeNumber(8)}>
-          8
+        <button className="btn-primary" id="2" onClick={() => writeNumber(2)}>
+          2
         </button>
-        <button className="btn-primary" id="9" onClick={() => writeNumber(9)}>
-          9
+        <button className="btn-primary" id="3" onClick={() => writeNumber(3)}>
+          3
         </button>
+        <button className="btn-primary" id="0" onClick={() => writeNumber(0)}>
+          0
+        </button>
+
         <button
           className="btn-primary"
           id="add"
@@ -134,7 +135,10 @@ const Calculator = ({ theme }) => {
           className="btn-primary"
           id="dot"
           onClick={() =>
-            showTotal == false && setCurrentNum(currentNum.toString() + ".")
+            showTotal == false &&
+            setCurrentNum(
+              currentNum !== null ? currentNum.toString() + "." : "0."
+            )
           }
         >
           .

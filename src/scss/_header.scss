@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   .themes,
   ul {
     display: flex;
@@ -16,11 +17,18 @@
 }
 
 .switch {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: $toggle-background;
   border-radius: 9999px;
   display: inline-flex;
   padding: 5px;
   width: 100%;
+}
+
+.app.theme2 .switch {
+  background-color: $toggle-background2;
+}
+.app.theme3 .switch {
+  background-color: $toggle-background3;
 }
 
 .switch__label {
@@ -31,8 +39,15 @@
 
 .switch__label--selected {
   /* For selected radio only */
-  background-color: #357edd;
+  background-color: $third-key-background;
   color: #fff;
+}
+
+.app.theme2 .switch__label--selected {
+  background-color: $third-key-background2;
+}
+.app.theme3 .switch__label--selected {
+  background-color: $third-key-background3;
 }
 
 .switch__input {

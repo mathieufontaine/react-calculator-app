@@ -9,8 +9,8 @@ function App() {
   return (
     <div className={`app theme${theme}`}>
       <div className="container">
-        <Header setTheme={setTheme} theme={theme} />
-        <Calculator theme={theme} />
+        <Header setTheme={setTheme} />
+        <Calculator />
       </div>
     </div>
   );

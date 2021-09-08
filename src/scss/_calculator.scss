@@ -1,6 +1,7 @@
 .result {
   text-align: right;
-  height: 100px;
+  padding: 2rem;
+  font-size: 4.5rem;
 }
 
 .buttons-grid {
@@ -15,36 +16,10 @@
     "reset reset equal equal";
 }
 
-#1 {
-  grid-area: 1;
+.app.theme2 .buttons-grid {
+  background: $toggle-background2;
 }
-#2 {
-  grid-area: 2;
-}
-#3 {
-  grid-area: 3;
-}
-#4 {
-  grid-area: 4;
-}
-#5 {
-  grid-area: 5;
-}
-#6 {
-  grid-area: 6;
-}
-#7 {
-  grid-area: 7;
-}
-#8 {
-  grid-area: 8;
-}
-#9 {
-  grid-area: 9;
-}
-#0 {
-  grid-area: 0;
-}
+
 #add {
   grid-area: add;
 }
@@ -65,20 +40,21 @@
 }
 #reset {
   grid-area: reset;
+  padding: 2rem;
 }
 #equal {
   grid-area: equal;
+  padding: 2rem;
 }
 
 %btn {
   display: inline-block;
   border: 0;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1rem 1.5rem;
-  text-transform: uppercase;
   font-weight: bold;
-  font-size: 2.5rem;
   outline: none;
+  box-shadow: 0px -4px 0px 1px rgba(0, 0, 0, 0.2) inset;
   cursor: pointer;
   text-align: center;
   &:hover {
@@ -88,14 +64,16 @@
 
 .btn-primary {
   @extend %btn;
+  font-size: 3.5rem;
 }
 .btn-secondary,
 .btn-third {
   @extend %btn;
   color: $white;
+  font-size: 2rem;
 }
 
-.calculator.theme1 {
+.app.theme1 {
   .btn-primary {
     background: $main-key-background;
     color: $text-color;
@@ -108,7 +86,7 @@
   }
 }
 
-.calculator.theme2 {
+.app.theme2 {
   .btn-primary {
     background: $main-key-background2;
     color: $text-color2;
@@ -121,7 +99,7 @@
   }
 }
 
-.calculator.theme3 {
+.app.theme3 {
   .btn-primary {
     background: $main-key-background3;
     color: $text-color3;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Header = ({ theme, setTheme }) => {
+const Header = ({ setTheme }) => {
   const onChangeValue = e => {
     e.target.parentNode.parentNode.childNodes.forEach(
       node => (node.className = "switch__label")
@@ -10,7 +10,7 @@ const Header = ({ theme, setTheme }) => {
   };
 
   return (
-    <div className={`header theme${theme}`}>
+    <div className="header">
       <h1>calc</h1>
       <div className="themes">
         <p>THEME</p>
