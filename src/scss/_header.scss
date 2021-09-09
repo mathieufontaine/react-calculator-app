@@ -3,17 +3,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .themes,
-  ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    margin: 0 0.5rem;
-  }
-  p {
-    margin: 2rem 2rem 0;
-  }
+}
+
+.themes,
+.themes__numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+.themes__text {
+  margin: 2rem 2rem 0;
 }
 
 .switch {
@@ -24,13 +25,6 @@
   width: 100%;
 }
 
-.app.theme2 .switch {
-  background-color: $toggle-background2;
-}
-.app.theme3 .switch {
-  background-color: $toggle-background3;
-}
-
 .switch__label {
   border-radius: 9999px;
   cursor: pointer;
@@ -38,17 +32,9 @@
 }
 
 .switch__label--selected {
-  /* For selected radio only */
-  background-color: $third-key-background;
-  color: #fff;
+  background-color: $equal-key-background;
+  color: $white;
   transition: 1s ease-out;
-}
-
-.app.theme2 .switch__label--selected {
-  background-color: $third-key-background2;
-}
-.app.theme3 .switch__label--selected {
-  background-color: $third-key-background3;
 }
 
 .switch__input {

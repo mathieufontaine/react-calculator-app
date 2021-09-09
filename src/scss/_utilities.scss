@@ -1,10 +1,5 @@
 @import url("https://fonts.google.com/specimen/Spartan");
 
-$primary-color: #1e1d21;
-$secondary-color: #2f6ef5;
-$text-color: #e5e3ed;
-$light-color: rgb(235, 235, 235);
-
 // theme 1
 $main-background: hsl(222, 26%, 31%);
 $toggle-background: hsl(223, 31%, 20%);
@@ -16,11 +11,11 @@ $white: hsl(0, 0, 100%);
 $main-key-background: hsl(30, 25%, 89%);
 $main-key-shadow: hsl(28, 16%, 65%);
 
-$second-key-background: hsl(225, 21%, 49%);
-$second-key-shadow: hsl(224, 28%, 35%);
+$delete-key-background: hsl(225, 21%, 49%);
+$delete-key-shadow: hsl(224, 28%, 35%);
 
-$third-key-background: hsl(6, 63%, 50%);
-$third-key-shadow: hsl(6, 70%, 34%);
+$equal-key-background: hsl(6, 63%, 50%);
+$equal-key-shadow: hsl(6, 70%, 34%);
 
 // theme 2
 $main-background2: hsl(0, 0%, 90%);
@@ -32,11 +27,11 @@ $text-color2: hsl(60, 10%, 19%);
 $main-key-background2: hsl(45, 7%, 89%);
 $main-key-shadow2: hsl(35, 11%, 61%);
 
-$second-key-background2: hsl(185, 42%, 37%);
-$second-key-shadow2: hsl(185, 58%, 25%);
+$delete-key-background2: hsl(185, 42%, 37%);
+$delete-key-shadow2: hsl(185, 58%, 25%);
 
-$third-key-background2: hsl(25, 98%, 40%);
-$third-key-shadow2: hsl(25, 99%, 27%);
+$equal-key-background2: hsl(25, 98%, 40%);
+$equal-key-shadow2: hsl(25, 99%, 27%);
 
 // theme 3
 $main-background3: hsl(268, 75%, 9%);
@@ -49,11 +44,11 @@ $text-color-blue3: hsl(198, 20%, 13%);
 $main-key-background3: hsl(268, 47%, 21%);
 $main-key-shadow3: hsl(290, 70%, 36%);
 
-$second-key-background3: hsl(281, 89%, 26%);
-$second-key-shadow3: hsl(285, 91%, 52%);
+$delete-key-background3: hsl(281, 89%, 26%);
+$delete-key-shadow3: hsl(285, 91%, 52%);
 
-$third-key-background3: hsl(176, 100%, 44%);
-$third-key-shadow3: hsl(177, 92%, 70%);
+$equal-key-background3: hsl(176, 100%, 44%);
+$equal-key-shadow3: hsl(177, 92%, 70%);
 
 *,
 *:before,
@@ -83,48 +78,6 @@ ul {
 
 img {
   width: 100%;
-}
-
-.app {
-  color: $white;
-  height: 100%;
-  min-height: 100vh;
-  transition: 0.5s ease-in-out;
-
-  &.theme1 {
-    background: $main-background;
-    section {
-      background: $screen-background;
-    }
-  }
-  &.theme2 {
-    background: $main-background2;
-    color: $text-color2;
-    section {
-      background: $screen-background2;
-    }
-  }
-  &.theme3 {
-    background: $main-background3;
-    color: $text-color3;
-    section {
-      background: $screen-background3;
-    }
-  }
-}
-
-.container {
-  max-width: 600px;
-  margin: auto;
-  padding: 5%;
-}
-
-section {
-  position: relative;
-  padding: 2.5rem;
-  margin: 3rem 0;
-  border-radius: 1rem;
-  transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 700px) {

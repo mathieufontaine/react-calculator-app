@@ -12,12 +12,12 @@ const Header = ({ setTheme, theme }) => {
   };
 
   return (
-    <div className="header">
+    <header className="header">
       <h1>calc</h1>
       <div className="themes">
-        <p>THEME</p>
-        <div className="switch-container">
-          <ul className="labels">
+        <p class="themes__text">THEME</p>
+        <div className="themes__container">
+          <ul className="themes__numbers">
             <li>1</li>
             <li>2</li>
             <li>3</li>
@@ -65,7 +65,7 @@ const Header = ({ setTheme, theme }) => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
