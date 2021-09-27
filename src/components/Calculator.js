@@ -50,10 +50,16 @@ const Calculator = () => {
         default:
           break;
       }
-      setTotal(newNum);
-      setSavedNum(newNum);
+      setTotal(limitNumSize(newNum));
+      setSavedNum(limitNumSize(newNum));
       setShowTotal(true);
     }
+  };
+
+  const limitNumSize = num => {
+    return num % 1 !== 0 && num.toString().length > 10
+      ? Math.round(num * 100000) / 100000
+      : num;
   };
 
   const reset = () => {
